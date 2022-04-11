@@ -1,0 +1,6 @@
+<%= form_with model:@machine do |f| %>
+    <p>機械登録</p>
+    <%= f.text_field :name %>
+    <%= f.submit "作成"%>
+<% end %>
+<%= link_to "戻る", root_path %>

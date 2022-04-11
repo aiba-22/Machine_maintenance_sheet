@@ -12,10 +12,10 @@
         </tr>
     </thead>
     <tbody>
-        <% 4.times do %>
+        <% @machine.each do |machine| %>
             <tr>
                 <td>4/10</td>
-                <td>CS-2</td>
+                <td><%= machine.name %></td>
                 <td>表紙出口</td>
                 <td>20分</td>
                 <td>7日</td>
@@ -26,4 +26,4 @@
     </tbody>
 </table>
 
-<p>メンテを追加する</p>
+<%= link_to "機械名登録", new_machines_path %>
