@@ -12,18 +12,19 @@
         </tr>
     </thead>
     <tbody>
-        <% @machine.each do |machine| %>
+        <% @maintenance_locations.each do |maintenance_location| %>
             <tr>
                 <td>4/10</td>
-                <td><%= machine.name %></td>
-                <td>表紙出口</td>
-                <td>20分</td>
-                <td>7日</td>
-                <td>4/17</td>
+                <td><%= maintenance_location.machine.name %></td>
+                <td><%= maintenance_location.name %></td>
+                <td><%= maintenance_location.interval %></td>
+                <td><%= maintenance_location.time_required %></td>
+                <td><%= maintenance_location.deadline %></td>
 
             </tr>
         <%end%>
     </tbody>
 </table>
 
-<%= link_to "機械名登録", new_machines_path %>
+<%= link_to "機械名登録", new_machines_path %><br>
+<%= link_to "メンテナンス登録",    new_maintenance_locations_path %>
