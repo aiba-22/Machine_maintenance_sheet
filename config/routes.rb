@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'maintenances#index'
-  resource :maintenances
+  root to: 'maintenance_locations#index'
+  resource :maintenance_locations
   resource :machines
 end
