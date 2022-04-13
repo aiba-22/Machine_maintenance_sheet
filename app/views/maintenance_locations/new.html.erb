@@ -1,8 +1,7 @@
 <%= form_with model: @maintenance_location do |f| %>
-  <%= f.text_field :name %><br>
-  <%= f.text_field :interval %><br>
-  <%= f.text_field :time_required %><br>
-  <%= f.text_field :deadline %><br>
-  <%= f.text_field :machine_id %><br>
+  <p>メンテナンス箇所</p><%= f.text_field :name %><br>
+  <p>メンテ期間</p><%= f.text_field :interval %><br>
+  <p>メンテ時間</p><%= f.text_field :time_required %><br>
+  <p>機械ID</p><%= f.text_field :machine_id %><br>
   <%=  submit_tag  "作成" %>
 <% end %>
