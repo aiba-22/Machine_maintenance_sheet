@@ -3,23 +3,26 @@
 <table border="1">
     <thead>
         <tr>
-            <th class="header1">登録日</th>
             <th class="header2">機械名</th>
             <th class="header3">メンテ箇所</th>
-            <th class="header4">メンテ作業時間目安</th>
-            <th class="header5">メンテ間隔</th>
+            <th class="header4">メンテ間隔</th>
+            <th class="header5">メンテ作業時間</th>
             <th class="header6">実施期日</th>
+            <th class="header7">更新日</th>
+            <th class="header7">メンテチェック</th>
+
         </tr>
     </thead>
     <tbody>
         <% @maintenance_locations.each do |maintenance_location| %>
             <tr>
-                <td>4/10</td>
                 <td><%= maintenance_location.machine.name %></td>
                 <td><%= maintenance_location.name %></td>
                 <td><%= maintenance_location.interval %></td>
                 <td><%= maintenance_location.time_required %></td>
                 <td><%= maintenance_location.deadline %></td>
+                <td><%= maintenance_location.updated_at %></td>
+                <td><%= link_to "完了", maintenance_location_path(maintenance_location.id), method: :PATCH%></td>
 
             </tr>
         <%end%>
@@ -27,4 +30,4 @@
 </table>
 
 <%= link_to "機械名登録", new_machines_path %><br>
-<%= link_to "メンテナンス登録",    new_maintenance_locations_path %>
+<%= link_to "メンテナンス登録", new_maintenance_location_path %>
